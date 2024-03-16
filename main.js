@@ -29,6 +29,9 @@
   
         console.log('long_description' + item.attributes.long_description);
 
+	console.log('thumbnail' + item.attributes.thumbnail.data.attributes.url)
+
+
         console.log('video_url' + item.attributes.video_url);
 
         contentdiv = document.createElement('div');
@@ -41,7 +44,9 @@
           <h2>SHORT DESCRIPTION:</h2> <p>${item.attributes.short_description}</p>
           
           <h2>LONG DESCRIPTION:</h2> <p>${item.attributes.long_description}</p>
-  
+
+	  <h2>THUMBNAIL:</h2><img src="${item.attributes.thumbnail.data.attributes.url}" height="300" width="300"></img>
+   
           <h2>VIDEO:</h2><iframe src="https://www.youtube.com/embed/${item.attributes.video_url.match(video_id)[1]}"></iframe>
          
 
